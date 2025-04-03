@@ -1,0 +1,675 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans';
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+}
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    /* width: 100vw; */
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+header{
+    height:920px;
+    width: 100vw;
+    position: relative;
+}
+header video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+header .obvodka {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: radial-gradient(circle at 45% 45%, 
+              rgba(0, 0, 0, 0.378) 25%, 
+              rgba(0, 0, 0, 0.713) 50%,
+              rgba(0, 0, 0, 0.852) 70%, 
+              rgba(0, 0, 0, 0.998) 90%,
+              rgb(0, 0, 0) 100%);
+    z-index: -1;
+}
+
+.header-navbar{
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    color: white;
+    border-right: 1px solid rgba(255, 255, 255, 0.223);
+}
+.nav a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.nav li{
+    list-style: none;
+}
+.go_surf-logo{
+    position: relative;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    display: flex;
+}
+.go_surf-logo a{
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color:white;
+    font-weight: 800;
+    font-size: 60px;
+    padding: 20px 0;
+}
+.go_surf-logo span{
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(86,247,208);
+    width: 100%;
+    height: 170px;
+    transition:height 0.2s;
+    z-index: -1;
+}
+.go_surf-logo a:hover + span{
+    height: 100%;
+}
+
+.nav ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    padding: 0;
+}
+.nav ul li a{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: color 0.2s;
+}
+.nav ul li a:hover{
+    color: rgb(86,247,208);
+}
+.nav ul li p{
+    padding-top: 5px;
+    font-size: 14px;
+    margin: 0;
+}
+.clock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.clock h1{
+    font-size: 64px;
+    margin-bottom: 10px;
+}
+.clock div{
+    display: flex;
+    gap: 10px;
+}
+.clock div h4{
+    font-weight:300;
+    font-size: 16px;
+    margin-top: 0;
+}
+.slide-down{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(100px,-20px);
+}
+.slide-down button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    animation: slideDownAnimation 2s forwards infinite;
+}
+@keyframes slideDownAnimation {
+    0% {
+        transform: translateY(-100%) scale(1.5);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%) scale(1.5);
+    }
+}
+.slide-down button:hover{
+    animation-play-state: paused;
+}
+
+.header-carousel{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: white;
+    
+}
+.location{
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    transform: translate(-80px, -50px);
+}
+.location *{
+    margin: 0;
+}
+.loc-1,.loc-3{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-size: 22px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.396);
+}
+.loc-2{
+    margin-bottom: 40px;
+    font-weight: 800;
+    font-size: 80px;
+}
+.loc-4{
+    margin-bottom: 10px;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.loc-1::before,.loc-3::before{
+    background-color: rgba(255, 255, 255, 0.313);
+    content: '';
+    width: 80px;
+    height: 0.5px;
+}
+
+.location button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.2s;
+}
+.location button:hover{
+    transform: scale(1.2);
+}
+
+.items{
+    display: flex;
+    justify-content: space-between;
+}
+.header-carousel-item div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-carousel-item div h1{
+    font-weight: 800;
+    font-size:24px ;
+}
+.header-carousel-item div p{
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+}
+.header-carousel-item-text{
+    padding-top:3px ;
+    width: 160px;
+    margin: 40px 0 0 40px;
+    border-top: 3px solid white;
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    position: relative;
+    background-color: #171919;
+    height: 100vh;
+
+}
+main h1 {
+    position: absolute;
+    left: 150px;
+    top: 80px;
+    color: white;
+    font-size:80px ;
+    font-weight: 800;
+    z-index: 1;
+}
+.main-fon {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    margin: 0 auto;
+}
+.fon-center{
+    position: relative;
+}
+
+
+.fon-center button{ 
+    position: absolute;
+    border-radius: 50%;
+    padding: 10px;
+    border: none;
+    background-color:#4AF6CDD6 ;
+    animation: pulse 0.9s infinite;
+    transition: background-color 0.5s;
+}
+.fon-center button:hover{
+    background-color: #0c8ce9;
+    animation:pulse1 1s infinite ;
+}
+@keyframes pulse {
+    0% { box-shadow: 0px 0px 0px #4AF6CDD6; }
+    10%{ box-shadow: 0px 0px 10px #4AF6CDD6;}
+    20%{ box-shadow: 0px 0px 20px #4AF6CDD6;}
+    30%{ box-shadow: 0px 0px 30px #4AF6CDD6;}
+    40%{ box-shadow: 0px 0px 40px #4AF6CDD6;}
+    50% { box-shadow: 0px 0px 50px #4AF6CDD6; }
+    60% { box-shadow: 0px 0px 60px #4AF6CDD6; }
+    70% { box-shadow: 0px 0px 70px #4AF6CDD6; }
+    80% { box-shadow: 0px 0px 80px #4AF6CDD6; }
+    90% { box-shadow: 0px 0px 90px #4AF6CDD6; }
+    100% { box-shadow: 0px 0px 100px #4AF6CDD6; }
+}
+@keyframes pulse1 {
+    0% { box-shadow: 0px 0px 0px #0c8ce9; }
+    10%{ box-shadow: 0px 0px 10px #0c8ce9;}
+    20%{ box-shadow: 0px 0px 20px #0c8ce9;}
+    30%{ box-shadow: 0px 0px 30px #0c8ce9;}
+    40%{ box-shadow: 0px 0px 40px #0c8ce9;}
+    50% { box-shadow: 0px 0px 50px #0c8ce9; }
+    60% { box-shadow: 0px 0px 60px #0c8ce9; }
+    70% { box-shadow: 0px 0px 70px #0c8ce9; }
+    80% { box-shadow: 0px 0px 80px #0c8ce9; }
+    90% { box-shadow: 0px 0px 90px #0c8ce9; }
+    100% { box-shadow: 0px 0px 100px #0c8ce9; }
+}
+
+.star-1,.star-2,.star-3,.star-4,.star-5,.star-6,.star-7,.star-8{
+    position: absolute;
+}
+.star-1 { top: 53%; left: 0; }
+.star-2 { top: 43%; left: 11%; }
+.star-3 { top: 51%; left: 28.5%; }
+.star-4 { top: 79%; left: 34%; }
+.star-5 { top: 36%; left: 45%; }
+.star-6 { top: 87%; left: 52.5%; }
+.star-7 { top: 60%; right: 31.5%; }
+.star-8 { top: 79%; right: 8%; }
+
+
+
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-50%);
+    transition: opacity 0.3s, visibility 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+.star-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+.tooltip h3{
+    display: block;
+    font-size: 18px;
+    font-weight: 800;
+    margin: 10px auto 5px;
+    white-space: nowrap;
+    padding-bottom: 5px;
+    width: 120px;
+    border-bottom: 1px solid #4AF6CD;
+}
+.weather-divs{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 10px;
+}
+.weather{
+    width: 50px;
+}
+.weather h5{
+    font-weight: 800;
+    font-size: 16px;
+    margin: 0;
+}
+.weather p{
+    color: rgba(255, 255, 255, 0.408);
+    font-size: 10px;
+    font-weight: 300;
+}
+.icons {
+    height: 900px;
+    padding-top: 150px;
+    background-color:#171919;
+}
+.icons div{
+    
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.icons div a{
+    position: absolute;
+    transition:all 0.5s;
+}
+.icons div a img{
+    height: 100%;
+}
+.icons div a div{
+    opacity: 0;
+    transition: opacity 0.5s;
+    position: absolute;
+    bottom: 5px;
+    right: 50%;
+    transform: translateX(50%);
+    color: white;
+}
+.icons div a div h1{
+    margin: 0;
+    padding: 10px 20px;
+}
+.green{
+    background-color: #4AF6CD;
+}
+.icons-first{
+    top: 0;
+}
+.icons-second{
+    top: 50px;
+    left: 25%;
+}
+.icons-third{
+    top: -20px;
+    left:50%;
+}
+.icons-last{
+    top: 60px;
+    left: 75%;
+}
+.icons div a:hover{
+    transform: scale(1.1);
+    z-index: 1;
+}
+.icons div a:hover div{
+    opacity: 1;
+}
+
+
+/* АНИМКА */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.show:nth-child(1) { transition-delay: 0.1s; }
+.show:nth-child(2) { transition-delay: 0.3s; }
+.show:nth-child(3) { transition-delay: 0.5s; }
+.show:nth-child(4) { transition-delay: 0.7s; }
+
+.travel{
+    position: relative;
+    background-color: #171919;
+}
+
+.travel > h1{
+    position: absolute;
+    color: white;
+    font-size: 80px;
+    font-weight: 800;
+    left: 200px;
+    top: 20px;
+}
+.travel-australia{
+    position: absolute;
+    color: white;
+    bottom: 20%;
+    left: 200px;
+}
+.travel-australia > h1{
+    font-weight: 800;
+    font-size: 40px;
+}
+.airplane{
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+}
+.airplane img{
+    rotate: 10deg;
+}
+.book{
+    background-color: #171919;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+.book button {
+    cursor: pointer;
+    display: flex;
+    border: none;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    background: none;
+}
+.airplane img{
+    width: 1000px;
+}
+.book button span{
+    border-radius: 10px;
+    background-color: #4AF6CD;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 800;
+    padding: 0 40px;
+    margin-left: 20px;
+    height: 100%;
+}
+
+@media screen and (max-width: 1270px) {
+    .fon-center img {
+        width: 900px;
+    }
+    .tooltip{
+        height: 200px;
+    }
+    .weather img{
+       height: 30px;
+       width: 30px;
+    }
+    .icons-first img,.icons-second img,.icons-third img,.icons-last img{
+        width: 300px;
+    }
+    .airplane img{
+        width: 700px;
+    }
+}
+@media screen and (max-width: 1140px){
+    .slide-down{
+        display: none;
+    }
+    .airplane{
+        bottom: 200px;
+    }
+    .airplane img{
+        width: 600px;
+    }
+}
+@media screen and (max-width: 1020px){
+    .header-navbar{
+        width: 100px;
+    }
+    .fon-center img {
+        width: 700px;
+    }
+    .weather img{
+        height: 30px;
+        width: 30px;
+     }
+     .header-carousel-item-text{
+        width: 120px;
+     }
+}
+@media screen and (max-width: 810px){
+    .items{
+        display: none;
+    }
+    .icons-first img,.icons-second img,.icons-third img,.icons-last img{
+        width: 200px;
+    }
+    .icons div * {
+        font-size: 20px;
+    }
+    .airplane img{
+        width: 400px;
+    }
+}
+@media screen and (max-width: 740px){
+    .loc-2{
+        font-size: 50px;
+    }
+    .fon-center img {
+        width: 600px;
+    }
+    .weather img{
+        height: 30px;
+        width: 30px;
+     }
+    .icons-first{
+        left: 60%;
+        transform: translate(-50%, 0);
+        rotate: 25deg;
+    }
+    .icons{
+        padding: 0;
+    }
+    .icons-second{
+        left: 40%;
+        transform: translate(-50%, 0);
+        rotate: -25deg;
+        top: -20px;
+    }
+    .icons-third{
+        top: 150px;
+        rotate: 35deg;
+    }
+    .icons-last{
+        left: 40%;
+        transform: translate(-50%, 0);
+        rotate: -35deg;
+        top: 220px;
+    }
+    .travel h1,.travel-australia{
+        left: 100px;
+    }
+}
+@media screen and (max-width: 630px){
+    .fon-center {
+        top: -100px;
+    }
+    .fon-center img {
+        width: 450px;
+    }
+    .weather img{
+        height: 30px;
+        width: 30px;
+     }
+     main h1{
+        font-size: 60px;
+        margin: 0;
+     }
+}
+@media screen and (max-width: 530px){
+    .loc-1,.loc-3{
+        font-size: 15px;
+    }
+    .loc-2,.loc-4{
+        font-size: 35px;
+    }
+    .fon-center img {
+        width: 350px;
+    }
+    .weather img{
+        height: 30px;
+        width: 30px;
+     }
+     .travel h1{
+        left: 50px;
+        font-size: 60px;
+    }
+    .travel-australia{
+        left: 50px;
+        font-size: 20px;
+        bottom: 100px;
+    }
+    .travel-australia h1{
+        font-size: 30px;
+    }
+    .airplane img{
+        width: 400px;
+    }
+    .airplane img{
+        width: 300px;
+    }
+    .book h1,.book button span{
+        font-size: 20px;
+    }
+    .book button span{
+        padding: 0 10px;
+    }
+}
+@media screen and (max-width: 415px){
+    .header-navbar{
+        display: none;
+    }
+    .location{
+        transform: translate(-40%, -50%);
+        text-align: center;
+    }
+    .loc-1::before,.loc-3::before{
+        display: none;
+    }
+    main h1{
+        font-size: 50px;
+        left: 30px;
+     }
+}
