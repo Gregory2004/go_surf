@@ -8,7 +8,6 @@ body{
 }
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
     /* width: 100vw; */
 }
 ::-webkit-scrollbar {
@@ -371,61 +370,72 @@ main h1 {
     font-weight: 300;
 }
 .icons {
-    height: 900px;
+    height: 100%;
+    width: 100%;
     padding-top: 150px;
+    padding-bottom: 150px;
     background-color:#171919;
 }
-.icons div{
-    
-    position: relative;
+.icons > div{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
 }
-.icons div a{
-    position: absolute;
-    transition:all 0.5s;
+.icons a img {
+    height: 400px;
+    width: 100%;
+    /* Или сколько тебе нужно */
+    height: auto;
 }
-.icons div a img{
-    height: 100%;
+.icons a {
+    flex: 1 1 22%; /* по умолчанию 4 в ряд */
+    text-align: center;
 }
-.icons div a div{
-    opacity: 0;
-    transition: opacity 0.5s;
+.icons div a div {
     position: absolute;
     bottom: 5px;
     right: 50%;
-    transform: translateX(50%);
-    color: white;
+    transform: translate(50%, 0);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
-.icons div a div h1{
+.icons div a div H1{
+    color: white;
     margin: 0;
-    padding: 10px 20px;
+}
+.icons-second{
+    margin-top: 70px;
+}
+.icons-third{
+    margin-top: -70px;
+}
+.icons-last{
+    margin-top: 70px;
 }
 .green{
     background-color: #4AF6CD;
+    padding: 10px;
 }
-.icons-first{
-    top: 0;
+@media (max-width: 900px) {
+    .icons a {
+        flex: 1 1 40%; /* 2 в ряд */
+    }
+    .icons-first,.icons-second,.icons-third,.icons-last{
+        margin: 10px;
+    }
 }
-.icons-second{
-    top: 50px;
-    left: 25%;
+
+@media (max-width: 500px) {
+    .icons a {
+        flex: 1 1 100%; /* 1 в ряд */
+    }
 }
-.icons-third{
-    top: -20px;
-    left:50%;
-}
-.icons-last{
-    top: 60px;
-    left: 75%;
-}
-.icons div a:hover{
-    transform: scale(1.1);
-    z-index: 1;
-}
-.icons div a:hover div{
-    opacity: 1;
-}
+
+
+
 
 
 /* АНИМКА */
@@ -471,6 +481,7 @@ main h1 {
     position: absolute;
     bottom: 100px;
     right: 0;
+    overflow-x: hidden;
 }
 .airplane img{
     rotate: 10deg;
@@ -516,9 +527,7 @@ main h1 {
        height: 30px;
        width: 30px;
     }
-    .icons-first img,.icons-second img,.icons-third img,.icons-last img{
-        width: 300px;
-    }
+    
     .airplane img{
         width: 700px;
     }
@@ -553,9 +562,7 @@ main h1 {
     .items{
         display: none;
     }
-    .icons-first img,.icons-second img,.icons-third img,.icons-last img{
-        width: 200px;
-    }
+    
     .icons div * {
         font-size: 20px;
     }
@@ -574,32 +581,12 @@ main h1 {
         height: 30px;
         width: 30px;
      }
-    .icons-first{
-        left: 60%;
-        transform: translate(-50%, 0);
-        rotate: 25deg;
-    }
-    .icons{
-        padding: 0;
-    }
-    .icons-second{
-        left: 40%;
-        transform: translate(-50%, 0);
-        rotate: -25deg;
-        top: -20px;
-    }
-    .icons-third{
-        top: 150px;
-        rotate: 35deg;
-    }
-    .icons-last{
-        left: 40%;
-        transform: translate(-50%, 0);
-        rotate: -35deg;
-        top: 220px;
-    }
+    
     .travel h1,.travel-australia{
         left: 100px;
+    }
+    .icons{
+        padding-top: 0;
     }
 }
 @media screen and (max-width: 630px){
